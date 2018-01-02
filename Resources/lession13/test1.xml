@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MMWinRoot>
+	<MMWin><!-- ´°¿ؠ-->
+		<enWinType>MMNormalWin</enWinType>
+		<x>50</x>
+		<y>20</y>
+		<MMCld><!-- ±뇩1 -->
+			<enWinType>MMLabel</enWinType>
+			<x>100</x>
+			<y>140</y>
+		</MMCld>
+	</MMWin>
+</MMWinRoot>

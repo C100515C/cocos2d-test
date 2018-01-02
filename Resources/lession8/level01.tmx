@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="60" height="10" tilewidth="70" tileheight="70" nextobjectid="2">
+ <tileset firstgid="1" name="map" tilewidth="70" tileheight="70" tilecount="98" columns="14">
+  <image source="map.png" width="980" height="490"/>
+ </tileset>
+ <tileset firstgid="99" name="meta_tiles" tilewidth="70" tileheight="70" tilecount="4" columns="4">
+  <image source="meta_tiles.png" width="280" height="70"/>
+  <tile id="0">
+   <properties>
+    <property name="Collidable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="food" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="win" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="testcc" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="ground" width="60" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYBkhmBWI/UYY1oViwRGCR/07vPGof4c3Hmn+Hej6gd6YmWHg2wH0bG8AAJQdP6k=
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" name="PlayerPoint" x="70" y="280" width="70" height="70"/>
+ </objectgroup>
+ <layer name="barrier" width="60" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowACpHGwqQH4qGweKYAXCROrjtr+BwFcYYBNnBeHPKFw5MXBRtePTx0fAUwNQO30APMDPjcTkwaGAsDnB+RwRU/3tEjTxLiBFPXogJeB+PxLip3kuIUUNaSoIweQGiajYGAAAFDZA0Y=
+  </data>
+ </layer>
+ <layer name="meta" width="60" height="10">
+  <data encoding="base64" compression="zlib">
+   eJzllA0KgDAIhb3rrPsfIQYTRPKvXCv6QJB6LZ+8AvgH26hOWznIQ3C/UXalr2D2zi2/yMqC66r9d7QdnF1H5T71ml9Uevm8pWtOVZA9x8szebBmjmTgLXh51uB7lbmfkenIDBE9+ZW5QIh/v5l3WrNUaDzdlf8zJ7uT1dz1+zXI7wET5x9A
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,34 @@
+<?<?xml version="1.0" encoding="UTF-8"?>
+<MMWinRoot>
+    <!--
+    <MMcc id=30>
+        <ccType> ccccccvvbb</ccType>
+    <\MMcc> -->
+	<MMWin><!--窗口 -->
+
+		<enWinType>MMNormalWin</enWinType>
+		<bg>lession12/推荐分享@2x.png</bg>
+		<x>0</x>
+		<y>450</y>
+
+		<MMCld><!--区域 1-->
+			<enWinType>MMDiv</enWinType>
+			<x>7</x>
+			<y>40</y>
+
+			<MMCld><!--标签 1-->
+				<enWinType>MMLabel</enWinType>
+				<text>label1</text>
+				<fontSize>25</fontSize>
+			</MMCld>
+			
+			<MMCld><!--标签2-->
+				<enWinType>MMLabel</enWinType>
+				<text>label2</text>
+			</MMCld>
+
+		</MMCld>
+
+	</MMWin>
+
+</MMWinRoot>
