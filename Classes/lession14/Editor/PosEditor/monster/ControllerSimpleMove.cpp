@@ -8,7 +8,7 @@
 #include "ControllerSimpleMove.hpp"
 
 ControllerSimpleMove::ControllerSimpleMove(){
-    m_moveSpeed = 0;
+    m_moveSpanTime = 0;
     m_moveTimeCount = 0;
 }
 ControllerSimpleMove::~ControllerSimpleMove(){
