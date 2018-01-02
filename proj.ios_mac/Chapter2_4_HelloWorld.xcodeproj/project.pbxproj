@@ -161,6 +161,9 @@
 		6A197FAF1FCD44F00022EFCD /* tollgate_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6A197FAC1FCD44F00022EFCD /* tollgate_3.mp3 */; };
 		6A197FB21FCD50250022EFCD /* EntityG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A197FB01FCD50250022EFCD /* EntityG.cpp */; };
 		6A197FB81FCD639A0022EFCD /* HeroManagerG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A197FB61FCD639A0022EFCD /* HeroManagerG.cpp */; };
+		6A25CFE01FFB232D009CDE3A /* ControllerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A25CFDE1FFB232D009CDE3A /* ControllerBase.cpp */; };
+		6A25CFE71FFB2362009CDE3A /* ControllerMoveBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A25CFE51FFB2362009CDE3A /* ControllerMoveBase.cpp */; };
+		6A25CFEA1FFB8030009CDE3A /* ControllerSimpleMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A25CFE81FFB8030009CDE3A /* ControllerSimpleMove.cpp */; };
 		6A3000851FA31E1F00A0D288 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A30001C1FA31E1F00A0D288 /* tinystr.cpp */; };
 		6A3000861FA31E1F00A0D288 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A30001E1FA31E1F00A0D288 /* tinyxml.cpp */; };
 		6A3000891FA31E1F00A0D288 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A3000221FA31E1F00A0D288 /* tinyxmlerror.cpp */; };
@@ -498,6 +501,12 @@
 		6A197FB11FCD50250022EFCD /* EntityG.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EntityG.hpp; sourceTree = "<group>"; };
 		6A197FB61FCD639A0022EFCD /* HeroManagerG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroManagerG.cpp; sourceTree = "<group>"; };
 		6A197FB71FCD639A0022EFCD /* HeroManagerG.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HeroManagerG.hpp; sourceTree = "<group>"; };
+		6A25CFDE1FFB232D009CDE3A /* ControllerBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ControllerBase.cpp; sourceTree = "<group>"; };
+		6A25CFDF1FFB232D009CDE3A /* ControllerBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControllerBase.hpp; sourceTree = "<group>"; };
+		6A25CFE51FFB2362009CDE3A /* ControllerMoveBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ControllerMoveBase.cpp; sourceTree = "<group>"; };
+		6A25CFE61FFB2362009CDE3A /* ControllerMoveBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControllerMoveBase.hpp; sourceTree = "<group>"; };
+		6A25CFE81FFB8030009CDE3A /* ControllerSimpleMove.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ControllerSimpleMove.cpp; sourceTree = "<group>"; };
+		6A25CFE91FFB8030009CDE3A /* ControllerSimpleMove.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControllerSimpleMove.hpp; sourceTree = "<group>"; };
 		6A30001C1FA31E1F00A0D288 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
 		6A30001D1FA31E1F00A0D288 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
 		6A30001E1FA31E1F00A0D288 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
@@ -1121,6 +1130,8 @@
 			children = (
 				6A197F881FCD3D090022EFCD /* MonsterPos.cpp */,
 				6A197F891FCD3D090022EFCD /* MonsterPos.hpp */,
+				6A25CFE81FFB8030009CDE3A /* ControllerSimpleMove.cpp */,
+				6A25CFE91FFB8030009CDE3A /* ControllerSimpleMove.hpp */,
 			);
 			path = monster;
 			sourceTree = "<group>";
@@ -1512,6 +1523,10 @@
 				6AF980F81FB2A934007FE9AC /* PosBase.hpp */,
 				6A197FB01FCD50250022EFCD /* EntityG.cpp */,
 				6A197FB11FCD50250022EFCD /* EntityG.hpp */,
+				6A25CFDE1FFB232D009CDE3A /* ControllerBase.cpp */,
+				6A25CFDF1FFB232D009CDE3A /* ControllerBase.hpp */,
+				6A25CFE51FFB2362009CDE3A /* ControllerMoveBase.cpp */,
+				6A25CFE61FFB2362009CDE3A /* ControllerMoveBase.hpp */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1562,6 +1577,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 5K9YU498F5;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Chapter2_4_HelloWorld" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1799,6 +1819,7 @@
 				33D7388D1F526DBA00D0DFEA /* ScheduleLession.cpp in Sources */,
 				6A3000891FA31E1F00A0D288 /* tinyxmlerror.cpp in Sources */,
 				33B6389C1F4E790000F876F0 /* RunEntity.cpp in Sources */,
+				6A25CFEA1FFB8030009CDE3A /* ControllerSimpleMove.cpp in Sources */,
 				6ADFB6FE1FF0CAB900B23538 /* MonsterG.cpp in Sources */,
 				6A197F9B1FCD3D090022EFCD /* MonsterPos.cpp in Sources */,
 				6A8823341F9ED01500A94B35 /* State.cpp in Sources */,
@@ -1820,6 +1841,7 @@
 				333D1ED21F4BC89E00800293 /* MyHelloWorldScene.cpp in Sources */,
 				6A8823361F9ED01500A94B35 /* StateWriteActicle.cpp in Sources */,
 				6A30008A1FA31E1F00A0D288 /* tinyxmlparser.cpp in Sources */,
+				6A25CFE71FFB2362009CDE3A /* ControllerMoveBase.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				33B638AD1F500D9300F876F0 /* ThreeDirectionMoveController.cpp in Sources */,
 				333D1ED41F4BC89E00800293 /* SecondSecne.cpp in Sources */,
@@ -1830,6 +1852,7 @@
 				6A8823351F9ED01500A94B35 /* StateReset.cpp in Sources */,
 				336A39CA1F5A92120063D6A9 /* LT_stringUtil.cpp in Sources */,
 				6A8823311F9ED01500A94B35 /* MutouT.cpp in Sources */,
+				6A25CFE01FFB232D009CDE3A /* ControllerBase.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				3308118D1F47DD4B0073C667 /* Player.cpp in Sources */,
 				6A68E3D51FB0039C00E2C161 /* MMBase.cpp in Sources */,
@@ -1888,6 +1911,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 5K9YU498F5;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1932,6 +1956,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 5K9YU498F5;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

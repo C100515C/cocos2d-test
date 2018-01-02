@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "EntityG.hpp"
+#include "PosBase.hpp"
 
 class MonsterG: public EntityG{
 public:
@@ -25,8 +26,8 @@ public:
     CC_PRIVATE(float, m_showTime, fShowTime);//出场时间
 
     //升级
-    void  upgrade();
-    
+    void upgrade();
+    void moveByPosList(Vector<PosBase*>posList);
 };
 
 #endif /* MonsterG_hpp */

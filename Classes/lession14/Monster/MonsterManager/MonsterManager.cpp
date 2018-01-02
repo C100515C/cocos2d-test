@@ -101,9 +101,35 @@ void MonsterManager::createMonster(int iCurLevel){
     //检查是否有新怪物出场
     this->schedule(schedule_selector(MonsterManager::showMonster));
     
-    
 }
 
 void MonsterManager::showMonster(float dt){
+    int iNotShowMonsterCount = (int)m_notShowMonster.size();
+    if (iNotShowMonsterCount>0) {
+        m_fShowTimeCount += dt;
+    }
     
+    //获取怪物第一个坐标
+    auto monsterFirstPos = getMonsterStartPos();
+    
+    Vector<MonsterG*> wantToDeleteMonster;
+    
+    for (auto monster : m_notShowMonster) {
+        
+        //时间到达怪物出厂 让怪物出场
+        if (m_fShowTimeCount>=monster->getfShowTime()) {
+            //添加怪物到删除列表
+            wantToDeleteMonster.pushBack(monster);
+           
+            monster ->setPosition(monsterFirstPos->getPos());
+            monster-> setVisible(true);
+            
+            //让怪物走指定路线
+            monster ->moveByPosList(m_monsterPosList);
+        }
+    }
+    
+    for(auto monster : wantToDeleteMonster ){
+        m_notShowMonster.eraseObject(monster);
+    }
 }

@@ -36,4 +36,11 @@ public:void set##funName(varType var){varName = var;}\
 //消息派发
 #define NOTIFY cocos2d::NotificationCenter::getInstance()
 
+//移动间隔时间
+#define CHECK_MOVE_SPEED_LEVEL1 0.1f
+#define CHECK_MOVE_SPEED_LEVEL2 0.04f
+#define CHECK_MOVE_SPEED_LEVEL3 0.03f
+
+#define SPEED 1
+
 #endif /* CommDefine_h */
