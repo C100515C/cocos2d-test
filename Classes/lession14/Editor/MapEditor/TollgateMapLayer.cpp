@@ -11,6 +11,8 @@
 #include "cocostudio/CocoStudio.h"
 
 #include "HeroManagerG.hpp"
+#include "MonsterManagerG.hpp"
+#include "MonsterG.hpp"
 
 #define HOME_LAYER_LVL 3
 #define MONSTER_LAYER_LVL 15
@@ -38,10 +40,20 @@ bool TollgateMapLayer::init(){
         m_heroManager = HeroManagerG::createWithLevel(m_currentLevel);
         this ->addChild(m_heroManager,HERO_LAYER_LVL);
         
+        //创建 怪物管理类
+        m_monsterManager = MonsterManagerG::createWithLevel(m_currentLevel);
+        this -> addChild(m_monsterManager,MONSTER_LAYER_LVL);
+        
+        this->schedule(schedule_selector(TollgateMapLayer::logic));
+        
         bRet = true;
     }while(0);
     
     return true;
+}
+
+void TollgateMapLayer::logic(float dt){
+    m_heroManager->logic(dt,m_monsterManager->getMonsterList());
 }
 
 void TollgateMapLayer::loadConfig(){

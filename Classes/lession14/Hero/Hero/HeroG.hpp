@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "EntityG.hpp"
 
+class MonsterG;
 class HeroG : public EntityG{
 public:
     HeroG();
@@ -28,9 +29,22 @@ public:
     CC_PRIVATE(int, m_iAtkRang, iAtkRange);//攻击范围
     CC_PRIVATE(int, m_iUpgradeCostBase, iUpgradeCostBase);//升级消耗基础值
     CC_PRIVATE(int, m_iUpgradeAtkBase, iUpgradeAtkBase);//升级攻击增加系数
-    
+    CC_PRIVATE(bool, m_isAtkCoolDown, isAtkCoolDown);//攻击冷却
+
     //升级
     void  upgrade();
+    
+    //检查 攻击怪物
+    void checkAtkMonster(float ft, Vector<MonsterG *>monsterList);
+private:
+    MonsterG* m_atkMonster;
+    void chooseAim(Vector<MonsterG *>monsterList);
+    void checkAimIsOutOfRange(Vector<MonsterG *>monsterList);
+    void atk();
+    bool isInAtkRange(Point point);
+    void chooseAtkMonster(MonsterG* monster);
+    void atkCoolDown(float dt);
+    void missAtkMonster();
 };
 
 #endif /* HeroG_hpp */

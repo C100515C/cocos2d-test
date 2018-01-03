@@ -11,6 +11,7 @@
 #include "TowerPos.hpp"
 #include "TowerBorder.hpp"
 #include "HeroG.hpp"
+#include "MonsterG.hpp"
 
 //#include "CommDefine.h"
 
@@ -110,6 +111,14 @@ TowerBorder *HeroManagerG::findClickTowerBorder(Point pos){
         }
     }
     return NULL;
+}
+
+void HeroManagerG::logic(float dt, Vector<MonsterG *> monsterList){
+    for (auto border:m_towerBordersList) {
+        if (border->getHero()!=NULL) {
+            border->getHero()->checkAtkMonster(dt, monsterList);
+        }
+    }
 }
 
 

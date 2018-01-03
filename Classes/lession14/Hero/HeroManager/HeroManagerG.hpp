@@ -18,20 +18,21 @@ USING_NS_CC;
 
 class PosBase;
 class TowerBorder;
+class MonsterG;
 class HeroManagerG : public Node{
 public:
     HeroManagerG();
     ~HeroManagerG();
     static HeroManagerG *createWithLevel(int iCurrentLevel);
     bool initWithLevel(int iCurrentLevel);
-    
+    void logic(float dt,Vector<MonsterG*>monsterList);
+
 private:
     Vector<PosBase*>m_towerPosList;//存放所有塔坐标对象
     Vector<TowerBorder*>m_towerBordersList;//存放所有炮台对象
     
     void createTowerBorder(int iCurrentLevel);//创建炮台
     void createTowerPos(Point pos);//创建塔坐标对象
-    
     /**
      查找点击炮台
 

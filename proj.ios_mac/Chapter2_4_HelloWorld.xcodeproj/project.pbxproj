@@ -164,6 +164,8 @@
 		6A25CFE01FFB232D009CDE3A /* ControllerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A25CFDE1FFB232D009CDE3A /* ControllerBase.cpp */; };
 		6A25CFE71FFB2362009CDE3A /* ControllerMoveBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A25CFE51FFB2362009CDE3A /* ControllerMoveBase.cpp */; };
 		6A25CFEA1FFB8030009CDE3A /* ControllerSimpleMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A25CFE81FFB8030009CDE3A /* ControllerSimpleMove.cpp */; };
+		6A25CFF51FFC7611009CDE3A /* MonsterG in Resources */ = {isa = PBXBuildFile; fileRef = 6A25CFF41FFC7611009CDE3A /* MonsterG */; };
+		6A25CFF91FFC7B70009CDE3A /* monster_level_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A25CFF81FFC7B70009CDE3A /* monster_level_1.plist */; };
 		6A3000851FA31E1F00A0D288 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A30001C1FA31E1F00A0D288 /* tinystr.cpp */; };
 		6A3000861FA31E1F00A0D288 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A30001E1FA31E1F00A0D288 /* tinyxml.cpp */; };
 		6A3000891FA31E1F00A0D288 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A3000221FA31E1F00A0D288 /* tinyxmlerror.cpp */; };
@@ -221,9 +223,8 @@
 		6AAFA6BE1FC2C2B500D177EC /* level_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AAFA6B71FC2C2B500D177EC /* level_2.jpg */; };
 		6AAFA6BF1FC2C2B500D177EC /* level_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AAFA6B81FC2C2B500D177EC /* level_3.jpg */; };
 		6AAFA6C51FC4110400D177EC /* lession_14_1.csb in Resources */ = {isa = PBXBuildFile; fileRef = 6AAFA6C41FC4110400D177EC /* lession_14_1.csb */; };
-		6ADFB6FB1FF0994700B23538 /* MonsterManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFB6F91FF0994700B23538 /* MonsterManager.cpp */; };
+		6ADFB6FB1FF0994700B23538 /* MonsterManagerG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFB6F91FF0994700B23538 /* MonsterManagerG.cpp */; };
 		6ADFB6FE1FF0CAB900B23538 /* MonsterG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFB6FC1FF0CAB900B23538 /* MonsterG.cpp */; };
-		6ADFB7011FF0FDAB00B23538 /* monster_level_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6ADFB7001FF0FDAB00B23538 /* monster_level_1.plist */; };
 		6AF980F91FB2A934007FE9AC /* PosBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AF980F71FB2A934007FE9AC /* PosBase.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -507,6 +508,9 @@
 		6A25CFE61FFB2362009CDE3A /* ControllerMoveBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControllerMoveBase.hpp; sourceTree = "<group>"; };
 		6A25CFE81FFB8030009CDE3A /* ControllerSimpleMove.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ControllerSimpleMove.cpp; sourceTree = "<group>"; };
 		6A25CFE91FFB8030009CDE3A /* ControllerSimpleMove.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControllerSimpleMove.hpp; sourceTree = "<group>"; };
+		6A25CFF31FFC71DE009CDE3A /* MonsterPropConfType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonsterPropConfType.h; sourceTree = "<group>"; };
+		6A25CFF41FFC7611009CDE3A /* MonsterG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MonsterG; sourceTree = "<group>"; };
+		6A25CFF81FFC7B70009CDE3A /* monster_level_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monster_level_1.plist; sourceTree = "<group>"; };
 		6A30001C1FA31E1F00A0D288 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
 		6A30001D1FA31E1F00A0D288 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
 		6A30001E1FA31E1F00A0D288 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
@@ -592,11 +596,10 @@
 		6AAFA6B71FC2C2B500D177EC /* level_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = level_2.jpg; sourceTree = "<group>"; };
 		6AAFA6B81FC2C2B500D177EC /* level_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = level_3.jpg; sourceTree = "<group>"; };
 		6AAFA6C41FC4110400D177EC /* lession_14_1.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = lession_14_1.csb; sourceTree = "<group>"; };
-		6ADFB6F91FF0994700B23538 /* MonsterManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MonsterManager.cpp; sourceTree = "<group>"; };
-		6ADFB6FA1FF0994700B23538 /* MonsterManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MonsterManager.hpp; sourceTree = "<group>"; };
+		6ADFB6F91FF0994700B23538 /* MonsterManagerG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MonsterManagerG.cpp; sourceTree = "<group>"; };
+		6ADFB6FA1FF0994700B23538 /* MonsterManagerG.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MonsterManagerG.hpp; sourceTree = "<group>"; };
 		6ADFB6FC1FF0CAB900B23538 /* MonsterG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MonsterG.cpp; sourceTree = "<group>"; };
 		6ADFB6FD1FF0CAB900B23538 /* MonsterG.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MonsterG.hpp; sourceTree = "<group>"; };
-		6ADFB7001FF0FDAB00B23538 /* monster_level_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monster_level_1.plist; sourceTree = "<group>"; };
 		6AF980F71FB2A934007FE9AC /* PosBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PosBase.cpp; sourceTree = "<group>"; };
 		6AF980F81FB2A934007FE9AC /* PosBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PosBase.hpp; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -1074,6 +1077,7 @@
 				6A197F751FCBE7C70022EFCD /* GlobalPath.h */,
 				6A197F761FCBE96C0022EFCD /* ClobalParam.h */,
 				6A7B258C1FD008B000FB85A5 /* HeroPropConfType.h */,
+				6A25CFF31FFC71DE009CDE3A /* MonsterPropConfType.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1372,6 +1376,7 @@
 		6A7B258D1FD00F8800FB85A5 /* csv */ = {
 			isa = PBXGroup;
 			children = (
+				6A25CFF41FFC7611009CDE3A /* MonsterG */,
 				6A7B258E1FD00F8800FB85A5 /* HeroG */,
 			);
 			path = csv;
@@ -1502,8 +1507,8 @@
 		6ADFB6F81FF0993400B23538 /* MonsterManager */ = {
 			isa = PBXGroup;
 			children = (
-				6ADFB6F91FF0994700B23538 /* MonsterManager.cpp */,
-				6ADFB6FA1FF0994700B23538 /* MonsterManager.hpp */,
+				6ADFB6F91FF0994700B23538 /* MonsterManagerG.cpp */,
+				6ADFB6FA1FF0994700B23538 /* MonsterManagerG.hpp */,
 			);
 			path = MonsterManager;
 			sourceTree = "<group>";
@@ -1511,7 +1516,7 @@
 		6ADFB6FF1FF0FDAB00B23538 /* plist */ = {
 			isa = PBXGroup;
 			children = (
-				6ADFB7001FF0FDAB00B23538 /* monster_level_1.plist */,
+				6A25CFF81FFC7B70009CDE3A /* monster_level_1.plist */,
 			);
 			path = plist;
 			sourceTree = "<group>";
@@ -1704,6 +1709,7 @@
 				336041981F62484C0091CCFE /* json_internalmap.inl in Resources */,
 				3308117C1F467F8E0073C667 /* bgMusic.wav in Resources */,
 				333D1EE91F4BC94600800293 /* sprite00.png in Resources */,
+				6A25CFF51FFC7611009CDE3A /* MonsterG in Resources */,
 				6A7B25AB1FD0EB4F00FB85A5 /* monster_1.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				330811921F48122A0073C667 /* MainScene_Game.csb in Resources */,
@@ -1739,12 +1745,12 @@
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				333D1F151F4D843A00800293 /* run14.png in Resources */,
 				3308117D1F467F8E0073C667 /* button_1.png in Resources */,
-				6ADFB7011FF0FDAB00B23538 /* monster_level_1.plist in Resources */,
 				333D1EFE1F4D832200800293 /* boys.plist in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				3308117B1F467F8E0073C667 /* background.png in Resources */,
 				6A7B25AC1FD0EB4F00FB85A5 /* monster_2.png in Resources */,
+				6A25CFF91FFC7B70009CDE3A /* monster_level_1.plist in Resources */,
 				336041691F6231550091CCFE /* Monster in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
@@ -1864,7 +1870,7 @@
 				6A68E3C91FB0037E00E2C161 /* MMWinPropertyFactory.cpp in Sources */,
 				337FF0201F49293B0010BA56 /* Monster.cpp in Sources */,
 				333D1ED31F4BC89E00800293 /* MySprite.cpp in Sources */,
-				6ADFB6FB1FF0994700B23538 /* MonsterManager.cpp in Sources */,
+				6ADFB6FB1FF0994700B23538 /* MonsterManagerG.cpp in Sources */,
 				6A197F7D1FCBF4AA0022EFCD /* I18N.cpp in Sources */,
 				6A197F9C1FCD3D090022EFCD /* TowerPosEditorOperateLayer.cpp in Sources */,
 				333D1EF51F4BCAA300800293 /* MyScene_7.cpp in Sources */,

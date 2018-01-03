@@ -10,9 +10,15 @@
 #include "CommDefine.h"
 #include "HeroPropConfType.h"
 #include "GlobalPath.h"
+#include "MonsterG.hpp"
 
-HeroG::HeroG(){}
-HeroG::~HeroG(){}
+HeroG::HeroG(){
+    m_isAtkCoolDown = false;
+    m_atkMonster = NULL;
+}
+HeroG::~HeroG(){
+    
+}
 
 HeroG *HeroG::create(cocos2d::Sprite *sprite){
     HeroG * hero = new HeroG();
@@ -97,5 +103,79 @@ bool HeroG::initFromCSVFileByID(int iHeroID){
 }
 
 void HeroG::upgrade(){
+}
+
+void HeroG::checkAtkMonster(float ft, Vector<MonsterG *> monsterList){
+    if (m_atkMonster!=NULL) {
+        if (m_atkMonster->isDead()) {
+            monsterList.eraseObject(m_atkMonster);
+            m_atkMonster = NULL;
+            return;
+        }
+        
+        //攻击冷却结束
+        if (m_isAtkCoolDown==false) {
+            atk();
+        }
+        
+        //判断怪物是否离开范围
+        checkAimIsOutOfRange(monsterList);
+        
+    }else{
+        chooseAim(monsterList);
+    }
+    
     
 }
+
+void HeroG::atk(){
+    //攻击冷却标记 不能在攻击
+    m_isAtkCoolDown = true;
+    log("atk");
+    this->schedule(schedule_selector(HeroG::atkCoolDown),getiSpeed()/1000.0f);
+}
+
+void HeroG::atkCoolDown(float dt){
+    m_isAtkCoolDown = false;
+}
+
+void HeroG::chooseAim(Vector<MonsterG *>monsterList){
+    for(auto monster:monsterList){
+        if (monster->isVisible() && isInAtkRange(monster->getPosition())) {
+            
+            chooseAtkMonster(monster);
+            break;
+        }
+    }
+}
+
+void HeroG::checkAimIsOutOfRange(Vector<MonsterG *>monsterList){
+    if (m_atkMonster!=NULL) {
+        if (isInAtkRange(m_atkMonster->getPosition())==false) {
+            missAtkMonster();
+        }
+    }
+}
+
+void HeroG::missAtkMonster(){
+    m_atkMonster = NULL;
+    log("Monster miss");
+}
+
+bool HeroG::isInAtkRange(Point point){
+    int atkRange = getiAtkRange();
+    
+    Point hPoint = this->getPosition();
+    
+    float length = point.getDistanceSq(hPoint);//两点之间的距离 没开根号的结果 所以下面要攻击距离的平方
+    if (length<= atkRange*atkRange) {
+        return true;
+    }
+    
+    return false;
+}
+
+void HeroG::chooseAtkMonster(MonsterG* monster){
+    m_atkMonster = monster;
+}
+

@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "EntityG.hpp"
 #include "PosBase.hpp"
+#include "ControllerSimpleMove.hpp"
 
 class MonsterG: public EntityG{
 public:
@@ -23,11 +24,17 @@ public:
     static MonsterG *createFromCSVFileByID(int iMonsterID);
     bool initFromCSVFileByID(int iMonsterID);
     
-    CC_PRIVATE(float, m_showTime, fShowTime);//出场时间
-
+    CREATE_FUNC(MonsterG);
+    bool init();
+    
+public:
     //升级
     void upgrade();
     void moveByPosList(Vector<PosBase*>posList);
+private:
+    ControllerSimpleMove *m_moveController;
+    CC_PRIVATE(int, m_iLevel, iLevel);
+    CC_PRIVATE(float, m_showTime, fShowTime);//出场时间
 };
 
 #endif /* MonsterG_hpp */

@@ -13,6 +13,7 @@
 USING_NS_CC;
 
 class HeroManagerG;
+class MonsterManagerG;
 class TollgateMapLayer : public Layer{
 public:
     TollgateMapLayer();
@@ -22,12 +23,13 @@ public:
     
 private:
     int m_currentLevel;//当前关卡
-    
+    void logic(float dt);
     /**
      读取配置文件
      */
     void loadConfig();
     
     HeroManagerG *m_heroManager;
+    MonsterManagerG *m_monsterManager;
 };
 #endif /* TollgateMapLayer_hpp */

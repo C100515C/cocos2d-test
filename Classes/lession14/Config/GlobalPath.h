@@ -9,7 +9,7 @@
 #define GlobalPath_h
 
 #define PATH_CSV_HERO_CONF "HeroG"//英雄 配置文件
-#define PATH_CSV_MONSTER_CONF ""//怪物配置文件
+#define PATH_CSV_MONSTER_CONF "MonsterG"//怪物配置文件
 #define PATH_BULLET_NOR ""//子弹 文件
 #define PATH_I18N_PUBLIC ""//语言文件 公共
 #define PATH_FONT_PUBLIC ""//文字字体

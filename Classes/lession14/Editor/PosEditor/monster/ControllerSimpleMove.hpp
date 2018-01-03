@@ -35,8 +35,8 @@ private:
 private:
     Vector<PosBase *> m_movePosList;
     PosBase *m_curDestPos;
-    int m_moveSpanTime;
-    int m_moveTimeCount;
+    int m_moveSpanTime;//间隔时间
+    int m_moveTimeCount;//移动计时
 };
 
 #endif /* ControllerSimpleMove_hpp */

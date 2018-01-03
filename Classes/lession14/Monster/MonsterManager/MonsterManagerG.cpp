@@ -5,7 +5,7 @@
 //  Created by CC on 2017/12/25.
 //
 
-#include "MonsterManager.hpp"
+#include "MonsterManagerG.hpp"
 #include "MonsterG.hpp"
 #include "MonsterPos.hpp"
 #include "PosBase.hpp"
@@ -13,18 +13,18 @@
 #include "GlobalPath.h"
 #include "CsvUtil.hpp"
 
-MonsterManager::MonsterManager(){
+MonsterManagerG::MonsterManagerG(){
     m_fShowTimeCount = 0;
 }
-MonsterManager::~MonsterManager(){
+MonsterManagerG::~MonsterManagerG(){
     
 }
 
-MonsterManager *MonsterManager::createWithLevel(int iCurLevel){
-    MonsterManager *monsterManager  = new MonsterManager();
+MonsterManagerG *MonsterManagerG::createWithLevel(int iCurLevel){
+    MonsterManagerG *monsterManager  = new MonsterManagerG();
     if (monsterManager &&monsterManager->initWithLevel(iCurLevel)) {
         monsterManager->autorelease();
-//        monsterManager->retain();
+        monsterManager->retain();
     }else{
         CC_SAFE_DELETE(monsterManager);
         monsterManager = NULL;
@@ -32,7 +32,7 @@ MonsterManager *MonsterManager::createWithLevel(int iCurLevel){
     return monsterManager;
 }
 
-bool MonsterManager::initWithLevel(int iCurLevel){
+bool MonsterManagerG::initWithLevel(int iCurLevel){
     
     if (!Node::init()) {
         return false;
@@ -44,23 +44,23 @@ bool MonsterManager::initWithLevel(int iCurLevel){
     return true;
 }
 
-Vector<MonsterG*>MonsterManager::getMonsterList(){
+Vector<MonsterG*>MonsterManagerG::getMonsterList(){
     return m_monsterList;
 }
 
-int MonsterManager::getNotShowMonsterCount(){
+int MonsterManagerG::getNotShowMonsterCount(){
     return (int)m_notShowMonster.size();
 }
 
-MonsterPos *MonsterManager::getMonsterEndPos(){
+MonsterPos *MonsterManagerG::getMonsterEndPos(){
     return (MonsterPos*)m_monsterPosList.at(m_monsterPosList.size()-1);
 }
 
-MonsterPos *MonsterManager::getMonsterStartPos(){
+MonsterPos *MonsterManagerG::getMonsterStartPos(){
     return (MonsterPos*)m_monsterPosList.at(0);
 }
 
-void MonsterManager::createMonster(int iCurLevel){
+void MonsterManagerG::createMonster(int iCurLevel){
     //加载怪物坐标对象
     std::string path = StringUtils::format(PATH_MONSTERPOS_PLIST_HEADER,iCurLevel);
     path = DOCUMENT_PATH(path);
@@ -70,40 +70,40 @@ void MonsterManager::createMonster(int iCurLevel){
     
     //读取配置文件
     std::string path1 = StringUtils::format(PATH_MONSTER_PLIST_HEADER,iCurLevel);
-    path1 = DOCUMENT_PATH(path1);
-    ValueMap fileDataMap = FileUtils::getInstance()->getValueMapFromFile(path1.c_str());
+//    path1 = DOCUMENT_PATH(path1);
+    auto fileDataMap = FileUtils::getInstance()->getValueMapFromFile(path1.c_str());
     
     int size = (int)fileDataMap.size();
     for (int i=1; i<=size; i++) {
         Value value = fileDataMap.at(StringUtils::toString(i));
         ValueMap valueMap = value.asValueMap();
-        
+
         int id = valueMap.at("id").asInt();
         float showTime = valueMap.at("showTime").asFloat();
-        
+
         auto monster = MonsterG::createFromCSVFileByID(id);
         monster->setfShowTime(showTime);
         monster->setVisible(false);
-        
+
         //设置精灵
         std::string monsterPic = StringUtils::format(PATH_MONSTER_PIC_HEADER,monster->getmodelID());
         monster->bindSprite(Sprite::create(monsterPic.c_str()));
-        
+
         //保存怪物
         m_monsterList.pushBack(monster);
-        
+
         //保存怪物到未出场 列表
         m_notShowMonster.pushBack(monster);
-        
+
         this ->addChild(monster);
     }
     
     //检查是否有新怪物出场
-    this->schedule(schedule_selector(MonsterManager::showMonster));
+    this->schedule(schedule_selector(MonsterManagerG::showMonster));
     
 }
 
-void MonsterManager::showMonster(float dt){
+void MonsterManagerG::showMonster(float dt){
     int iNotShowMonsterCount = (int)m_notShowMonster.size();
     if (iNotShowMonsterCount>0) {
         m_fShowTimeCount += dt;

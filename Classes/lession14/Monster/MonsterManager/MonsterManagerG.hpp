@@ -5,8 +5,8 @@
 //  Created by CC on 2017/12/25.
 //
 
-#ifndef MonsterManager_hpp
-#define MonsterManager_hpp
+#ifndef MonsterManagerG_hpp
+#define MonsterManagerG_hpp
 
 #include <stdio.h>
 #include "cocos2d.h"
@@ -15,12 +15,12 @@ USING_NS_CC;
 class PosBase;
 class MonsterG;
 class MonsterPos;
-class MonsterManager: public Node{
+class MonsterManagerG: public Node{
 public:
-    MonsterManager();
-    ~MonsterManager();
+    MonsterManagerG();
+    ~MonsterManagerG();
     
-    static MonsterManager * createWithLevel(int iCurLevel);//
+    static MonsterManagerG * createWithLevel(int iCurLevel);//
     bool initWithLevel(int iCurLevel);//
     
     void createMonster(int iCurLevel);//读取配置文件创建怪物
