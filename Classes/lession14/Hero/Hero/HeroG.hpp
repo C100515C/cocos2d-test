@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "EntityG.hpp"
 
+class BulletManager;
 class MonsterG;
 class HeroG : public EntityG{
 public:
@@ -45,6 +46,7 @@ private:
     void chooseAtkMonster(MonsterG* monster);
     void atkCoolDown(float dt);
     void missAtkMonster();
+    BulletManager* m_bulletManager;
 };
 
 #endif /* HeroG_hpp */

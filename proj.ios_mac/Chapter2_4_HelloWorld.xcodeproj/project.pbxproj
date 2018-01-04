@@ -223,6 +223,9 @@
 		6AAFA6BE1FC2C2B500D177EC /* level_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AAFA6B71FC2C2B500D177EC /* level_2.jpg */; };
 		6AAFA6BF1FC2C2B500D177EC /* level_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AAFA6B81FC2C2B500D177EC /* level_3.jpg */; };
 		6AAFA6C51FC4110400D177EC /* lession_14_1.csb in Resources */ = {isa = PBXBuildFile; fileRef = 6AAFA6C41FC4110400D177EC /* lession_14_1.csb */; };
+		6AB3A92C1FFDFFCB00097433 /* BulletBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3A92A1FFDFFCB00097433 /* BulletBase.cpp */; };
+		6AB3A92F1FFE032800097433 /* NormalBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3A92D1FFE032800097433 /* NormalBullet.cpp */; };
+		6AB3A9321FFE1BDF00097433 /* BulletManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3A9301FFE1BDF00097433 /* BulletManager.cpp */; };
 		6ADFB6FB1FF0994700B23538 /* MonsterManagerG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFB6F91FF0994700B23538 /* MonsterManagerG.cpp */; };
 		6ADFB6FE1FF0CAB900B23538 /* MonsterG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFB6FC1FF0CAB900B23538 /* MonsterG.cpp */; };
 		6AF980F91FB2A934007FE9AC /* PosBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AF980F71FB2A934007FE9AC /* PosBase.cpp */; };
@@ -596,6 +599,12 @@
 		6AAFA6B71FC2C2B500D177EC /* level_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = level_2.jpg; sourceTree = "<group>"; };
 		6AAFA6B81FC2C2B500D177EC /* level_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = level_3.jpg; sourceTree = "<group>"; };
 		6AAFA6C41FC4110400D177EC /* lession_14_1.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = lession_14_1.csb; sourceTree = "<group>"; };
+		6AB3A92A1FFDFFCB00097433 /* BulletBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BulletBase.cpp; sourceTree = "<group>"; };
+		6AB3A92B1FFDFFCB00097433 /* BulletBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BulletBase.hpp; sourceTree = "<group>"; };
+		6AB3A92D1FFE032800097433 /* NormalBullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NormalBullet.cpp; sourceTree = "<group>"; };
+		6AB3A92E1FFE032800097433 /* NormalBullet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NormalBullet.hpp; sourceTree = "<group>"; };
+		6AB3A9301FFE1BDF00097433 /* BulletManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BulletManager.cpp; sourceTree = "<group>"; };
+		6AB3A9311FFE1BDF00097433 /* BulletManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BulletManager.hpp; sourceTree = "<group>"; };
 		6ADFB6F91FF0994700B23538 /* MonsterManagerG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MonsterManagerG.cpp; sourceTree = "<group>"; };
 		6ADFB6FA1FF0994700B23538 /* MonsterManagerG.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MonsterManagerG.hpp; sourceTree = "<group>"; };
 		6ADFB6FC1FF0CAB900B23538 /* MonsterG.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MonsterG.cpp; sourceTree = "<group>"; };
@@ -1344,6 +1353,7 @@
 		6A68E3E81FB04D9A00E2C161 /* lession14 */ = {
 			isa = PBXGroup;
 			children = (
+				6AB3A9231FFDC29800097433 /* Bullet */,
 				6A197FB31FCD63710022EFCD /* Hero */,
 				6A197FB41FCD63710022EFCD /* Monster */,
 				6A197F821FCD3D090022EFCD /* Editor */,
@@ -1495,6 +1505,33 @@
 			path = tollgate;
 			sourceTree = "<group>";
 		};
+		6AB3A9231FFDC29800097433 /* Bullet */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3A9291FFDFF3200097433 /* Bullet */,
+				6AB3A9281FFDFF3100097433 /* BulletManager */,
+			);
+			path = Bullet;
+			sourceTree = "<group>";
+		};
+		6AB3A9281FFDFF3100097433 /* BulletManager */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3A9301FFE1BDF00097433 /* BulletManager.cpp */,
+				6AB3A9311FFE1BDF00097433 /* BulletManager.hpp */,
+			);
+			path = BulletManager;
+			sourceTree = "<group>";
+		};
+		6AB3A9291FFDFF3200097433 /* Bullet */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3A92D1FFE032800097433 /* NormalBullet.cpp */,
+				6AB3A92E1FFE032800097433 /* NormalBullet.hpp */,
+			);
+			path = Bullet;
+			sourceTree = "<group>";
+		};
 		6ADFB6F71FF0993400B23538 /* Monster */ = {
 			isa = PBXGroup;
 			children = (
@@ -1532,6 +1569,8 @@
 				6A25CFDF1FFB232D009CDE3A /* ControllerBase.hpp */,
 				6A25CFE51FFB2362009CDE3A /* ControllerMoveBase.cpp */,
 				6A25CFE61FFB2362009CDE3A /* ControllerMoveBase.hpp */,
+				6AB3A92A1FFDFFCB00097433 /* BulletBase.cpp */,
+				6AB3A92B1FFDFFCB00097433 /* BulletBase.hpp */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1813,6 +1852,8 @@
 				336A39CD1F5BF0A20063D6A9 /* CsvData.cpp in Sources */,
 				333D1ED11F4BC89E00800293 /* MoveTest.cpp in Sources */,
 				6A68E3E41FB003AE00E2C161 /* XMLTest.cpp in Sources */,
+				6AB3A92C1FFDFFCB00097433 /* BulletBase.cpp in Sources */,
+				6AB3A92F1FFE032800097433 /* NormalBullet.cpp in Sources */,
 				6AF980F91FB2A934007FE9AC /* PosBase.cpp in Sources */,
 				6A197F9D1FCD3D090022EFCD /* PosLoadUtil.cpp in Sources */,
 				336041661F622AD20091CCFE /* CsvUtil.cpp in Sources */,
@@ -1856,6 +1897,7 @@
 				3348B3351F54118E002BC221 /* OtherLayer.cpp in Sources */,
 				337FF0241F492C470010BA56 /* MonsterManager.cpp in Sources */,
 				6A8823351F9ED01500A94B35 /* StateReset.cpp in Sources */,
+				6AB3A9321FFE1BDF00097433 /* BulletManager.cpp in Sources */,
 				336A39CA1F5A92120063D6A9 /* LT_stringUtil.cpp in Sources */,
 				6A8823311F9ED01500A94B35 /* MutouT.cpp in Sources */,
 				6A25CFE01FFB232D009CDE3A /* ControllerBase.cpp in Sources */,

@@ -11,10 +11,12 @@
 #include "HeroPropConfType.h"
 #include "GlobalPath.h"
 #include "MonsterG.hpp"
+#include "BulletManager.hpp"
 
 HeroG::HeroG(){
     m_isAtkCoolDown = false;
     m_atkMonster = NULL;
+    m_bulletManager = NULL;
 }
 HeroG::~HeroG(){
     
@@ -41,6 +43,11 @@ bool HeroG::init(cocos2d::Sprite *sprite){
     do {
         CC_BREAK_IF(!sprite);
         bindSprite(sprite);
+        
+        //创建子弹管理类对象
+        m_bulletManager = BulletManager::create();
+        this->addChild(m_bulletManager);
+        
         ref = true;
     } while (0);
     
@@ -92,6 +99,10 @@ bool HeroG::initFromCSVFileByID(int iHeroID){
         CC_BREAK_IF(!sprite);
         bindSprite(sprite);
         
+        //创建子弹管理类对象
+        m_bulletManager = BulletManager::create();
+        this->addChild(m_bulletManager);
+        
         ref = true;
         
     } while (0);
@@ -129,10 +140,20 @@ void HeroG::checkAtkMonster(float ft, Vector<MonsterG *> monsterList){
 }
 
 void HeroG::atk(){
-    //攻击冷却标记 不能在攻击
-    m_isAtkCoolDown = true;
-    log("atk");
-    this->schedule(schedule_selector(HeroG::atkCoolDown),getiSpeed()/1000.0f);
+    BulletBase *bullet = m_bulletManager->getAnyUnUsedBullet();
+    if (bullet!=NULL) {
+        //根据英雄数据设置子弹属性
+        Point heroWorldPos = this->getParent()->convertToWorldSpace(this->getPosition());
+        bullet ->setPosition(bullet->getParent()->convertToNodeSpace(heroWorldPos));
+        bullet -> setiAtkValue(this->getiCurrentAtk());
+        bullet->lockAim(m_atkMonster);
+        
+        //攻击冷却标记 不能在攻击
+        m_isAtkCoolDown = true;
+//        log("atk");
+        this->schedule(schedule_selector(HeroG::atkCoolDown),getiSpeed()/1000.0f);
+    }
+    
 }
 
 void HeroG::atkCoolDown(float dt){

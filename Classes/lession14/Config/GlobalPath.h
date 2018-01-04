@@ -25,6 +25,7 @@
 #define PATH_BORDER_MAGIC_PIC_HEADER "magic_border_%d.png"
 #define PATH_HERO_PIC_HEADER "hero_%d.png"
 #define PATH_MONSTER_PIC_HEADER "monster_%d.png"
+#define PATH_BULLET_PIC_NORMAL "bulletNor.png"
 
 //手机存储 document 路径
 #define DOCUMENT_PATH(c_path)({\
